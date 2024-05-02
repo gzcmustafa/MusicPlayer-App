@@ -77,3 +77,8 @@ const calculateTime = (toplamSaniye) => {
     progressBar.value = Math.floor(audio.currentTime);
     currentTime.textContent = calculateTime(progressBar.value);
  })
+
+ progressBar.addEventListener("input",()=>{
+    currentTime.textContent = calculateTime(progressBar.value)
+    audio.currentTime = progressBar.value
+ })
